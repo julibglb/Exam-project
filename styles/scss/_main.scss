@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 
@@ -17,6 +17,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .header-content {
@@ -26,7 +27,7 @@ header {
     align-items: center;
     padding: 30px 20px;
     background: rgba(255, 255, 255, 0.31);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(129, 129, 129, 0.1);
     backdrop-filter: blur(9px);
     -webkit-backdrop-filter: blur(9px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -280,5 +281,329 @@ header {
         @include breakpoint("medium") {
             display: none;
         }
+    }
+}
+
+//--------------------------------TITLE-------------------------//
+
+.main-content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 162px;
+
+    @include breakpoint("medium") {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+
+.title-content {
+    padding: 16px;
+    margin-bottom: 64px;
+
+    @include breakpoint("medium") {
+        max-width: 768px;
+        padding: 0;
+    }
+}
+
+.name-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 55px;
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: $grey; 
+    }
+}
+
+.title-name {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.11;
+        letter-spacing: normal;
+        color: $darkgrey;
+    }
+    
+
+    img {
+        height: 40px;
+        width: auto;
+    }
+}
+
+.location-hire-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 60px;
+}
+
+.location-hire-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    img {
+        width: 24px;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: $grey;
+    }
+}
+
+.pulse-span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin-right: 7px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 0 rgba(65, 204, 44, 0.4);
+    animation: pulse 1s infinite;
+
+    &:hover {
+        animation: none;
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(57, 204, 44, 0.4);
+        }
+        70% {
+            -webkit-box-shadow: 0 0 0 10px rgba(44, 204, 105, 0);
+        }
+        100% {
+            -webkit-box-shadow: 0 0 0 0 rgba(44, 204, 71, 0);
+        }
+    }
+    @keyframes pulse {
+        0% {
+        -moz-box-shadow: 0 0 0 0 rgba(44, 204, 129, 0.4);
+        box-shadow: 0 0 0 0 rgba(44, 204, 44, 0.4);
+        }
+        70% {
+            -moz-box-shadow: 0 0 0 10px rgba(44, 204, 92, 0);
+            box-shadow: 0 0 0 10px rgba(44, 204, 161, 0);
+        }
+        100% {
+            -moz-box-shadow: 0 0 0 0 rgba(44, 204, 103, 0);
+            box-shadow: 0 0 0 0 rgba(44, 204, 76, 0);
+        }
+    }
+}
+        
+
+.link-socia {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+
+.photo-block {
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 68px;
+
+    @include breakpoint("medium") {
+        margin-bottom: 96px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: -24px;
+        width: 120%;
+        height: 100%;
+        background-color: #e0e0e0;
+        z-index: -1;
+        
+        
+        @include breakpoint("medium") {
+            top: 39px;
+            left: 41px;
+            width: 100%;
+        }
+    }
+
+    img {
+        width: 240px;
+        height: 280px;
+        outline: 10px solid $white;
+
+        @include breakpoint("medium") {
+            width: 280px;
+            height: 320px;
+        }
+    }
+}
+
+//--------------------------ABOUT ME------------------------//
+
+.about-me {
+    background-color: #f9fafb;
+    padding-top: 96px;
+    padding-bottom: 68px;
+    position: relative;
+}
+
+#about {
+    @include buttonPrimary;
+    margin-bottom: 48px;
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("medium") {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.about-me-photo {
+    margin: 0 auto;
+    margin-bottom: 68px;
+    box-shadow: -11px 11px #e5e7eb, 11px 11px #e5e7eb;
+
+    @include breakpoint("medium") {
+        width: 400px;
+        margin: 0;
+        margin-left: 40px;
+        box-shadow: -40px 40px #e5e7eb;
+    }
+
+    img {
+        width: 280px;
+        height: 360px;
+        border: solid 8px #f9fafb;
+
+        @include breakpoint("medium"){
+            width: 400px;
+            height: 480px;
+        }
+    }
+}
+
+.my-biography {
+    margin-bottom: 64px;
+
+    @include breakpoint("medium") {
+        max-width: 584px;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.6px;
+        color: $darkgrey;
+        margin-bottom: 24px;
+
+        @include breakpoint("medium") {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: $grey;
+        margin-bottom: 16px;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: $grey;
+    }
+
+    img {
+        width: 16px;
+    }
+}
+
+//---------------------------SKILLS----------------------//
+
+.skills-content {
+    margin-top: 64px;
+    margin-bottom: 64px;
+
+    h3 {
+        @include buttonPrimary;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        text-align: center;
+        color: $grey;
+        margin-top: 16px;
+    }
+}
+
+.tools-and-technologies {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 48px;
+    margin-top: 48px;
+}
+
+.tool-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 17%;
+    gap: 8px;
+
+    @include breakpoint("medium") {
+        width: 8%;
+    }
+
+    img {
+        width: 64px;
+        height: 64px;
+    }
+
+    span {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        color: #4b5563;
+        text-align: center;
     }
 }
