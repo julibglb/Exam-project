@@ -430,6 +430,7 @@ header {
 
     @include breakpoint("medium") {
         margin-bottom: 96px;
+        margin-left: 10px;
     }
 
     &::before {
@@ -466,9 +467,12 @@ header {
 
 .about-me {
     background-color: #f9fafb;
-    padding-top: 96px;
-    padding-bottom: 68px;
+    padding: 64px 16px;
     position: relative;
+    
+    @include breakpoint("medium") {
+        padding: 96px 20px;
+    }
 }
 
 #about {
@@ -495,6 +499,7 @@ header {
         width: 400px;
         margin: 0;
         margin-left: 40px;
+        margin-right: 10px;
         box-shadow: -40px 40px #e5e7eb;
     }
 
@@ -561,13 +566,7 @@ header {
     }
 
     p {
-        font-size: 18px;
-        font-weight: normal;
-        line-height: 1.56;
-        letter-spacing: normal;
-        text-align: center;
-        color: $grey;
-        margin-top: 16px;
+        @include paragraphPrimary;
     }
 }
 
@@ -605,5 +604,189 @@ header {
         letter-spacing: normal;
         color: #4b5563;
         text-align: center;
+    }
+}
+
+//--------------------------------EXPERIENCE-----------------------------//
+
+.experience {
+    background-color: #f9fafb;
+    padding: 64px 16px;
+
+    @include breakpoint("medium") {
+        padding: 96px 20px;
+    }
+}
+
+.experience-section {
+    h3 {
+        @include buttonPrimary;
+    }
+    
+    p {
+        @include paragraphPrimary;
+    }
+}
+
+.experience-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+
+    @include breakpoint("medium") {
+        gap: 48px;
+        margin-top: 48px;
+    }
+
+}
+
+.experience-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 4px 3px 0 rgba(0, 0, 0, 0.07);
+    background-color: $white;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: $grey;
+    
+    @include breakpoint("medium") {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 48px;
+        max-width: 896px;
+    }
+
+    img {
+        width: 102px;
+        height: 28px;
+        margin-right: 92px;
+    }
+
+    span {
+        max-width: 161px;
+    }
+}
+
+.position {
+    order: 1;
+
+    @include breakpoint("medium") {
+        order: 0;
+        max-width: 384px;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: normal;
+        color: $darkgrey;
+        margin-bottom: 16px;
+    }
+
+    li {
+        list-style-type: disc;
+        margin-left: 27px;
+        max-width: 414px;
+    }
+
+}
+
+//------------------------------WORK----------------------------//
+
+.work-content {
+    padding: 64px 16px;
+
+    @include breakpoint("medium") {
+        padding: 96px 20px;
+    }
+
+    h3 {
+        @include buttonPrimary;
+    }
+
+    p {
+        @include paragraphPrimary;
+    }
+}
+
+.block-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 24px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 4px 3px 0 rgba(0, 0, 0, 0.07);
+
+    @include breakpoint("medium") {
+        flex-direction: row;
+    }
+}
+
+.photo-project {
+    margin: 0 auto;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #f3f4f6;
+    padding: 32px;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+.reverse-block {
+
+    @include breakpoint("medium"){
+        order: 1;
+    }
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+
+    h4 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.56;
+        color: $darkgrey;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: $grey;
+        margin-top: 0;
+    }
+
+}
+
+.work-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+
+    span{
+        @include buttonPrimary;
+        margin: 0;
     }
 }

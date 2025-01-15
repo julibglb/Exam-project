@@ -38,3 +38,13 @@
     border-radius: 12px;
     background-color: $lightgrey;
 }
+
+@mixin paragraphPrimary {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    text-align: center;
+    color: $grey;
+    margin-top: 16px;
+}
