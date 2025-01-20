@@ -647,6 +647,10 @@ header {
   }
 }
 
+.night-theme {
+  display: none;
+}
+
 .main-content {
   display: flex;
   flex-direction: column-reverse;
@@ -1489,4 +1493,12 @@ footer {
 
 body.dark {
   background-color: black;
+}
+
+.night-theme.dark {
+  display: block;
+}
+
+.light-theme.dark {
+  display: none;
 }
