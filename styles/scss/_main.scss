@@ -18,6 +18,19 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
+    background: rgba(255, 255, 255, 0.31);
+    box-shadow: 0 4px 30px rgba(129, 129, 129, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    
+    @include breakpoint("medium") {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: none;
+        backdrop-filter: blur(5.5px);
+        -webkit-backdrop-filter: blur(5.5px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
 }
 
 .header-content {
@@ -26,19 +39,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.31);
-    box-shadow: 0 4px 30px rgba(129, 129, 129, 0.1);
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    @include breakpoint("medium") {
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: none;
-        backdrop-filter: blur(5.5px);
-        -webkit-backdrop-filter: blur(5.5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
 }
 .header-logo {
     color: $darkgrey;
@@ -142,7 +142,7 @@ header {
     right: 0;
     width: 320px;
     height: 91px;
-    background-color: white;
+    background-color: $white;
     z-index: -1;
 
     span {
@@ -265,6 +265,11 @@ header {
             background-color: $grey;
             color: $white;
             font-weight: 500;
+        }
+
+        &:visited {
+            color: $white;
+            background-color: $darkgrey;
         }
     }
 }
@@ -431,7 +436,7 @@ header {
         transition-duration: .2s; 
 
         &:hover {
-            background-color: #f9fafb;
+            background-color: $mainlight;
             border-radius: 10px;
         }
     }
@@ -483,7 +488,7 @@ header {
 //--------------------------ABOUT ME------------------------//
 
 .about-me {
-    background-color: #f9fafb;
+    background-color: $mainlight;
     padding: 64px 16px;
     position: relative;
     
@@ -504,6 +509,7 @@ header {
     @include breakpoint("medium") {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -523,7 +529,7 @@ header {
     img {
         width: 280px;
         height: 360px;
-        border: solid 8px #f9fafb;
+        border: solid 8px $mainlight;
 
         @include breakpoint("medium"){
             width: 400px;
@@ -612,6 +618,7 @@ header {
     img {
         width: 64px;
         height: 64px;
+        background-color: transparent;
         transition: transform 0.2s ease;
 
         &:hover {
@@ -632,7 +639,7 @@ header {
 //--------------------------------EXPERIENCE-----------------------------//
 
 .experience {
-    background-color: #f9fafb;
+    background-color: $mainlight;
     padding: 64px 16px;
 
     @include breakpoint("medium") {
@@ -758,11 +765,12 @@ header {
 
 .photo-project {
     margin: 0 auto;
-    background-color: #f9fafb;
-    border-bottom: 1px solid #f3f4f6;
+    background-color: $mainlight;
     padding: 32px;
-
+    border-radius: 10px 10px 0 0;
+    
     @include breakpoint("medium") {
+        border-radius: 10px 0 0 10px;
         padding: 48px;
     }
 
@@ -781,8 +789,9 @@ header {
 }
 
 .reverse-block {
-
+    
     @include breakpoint("medium") {
+        border-radius: 0 10px 10px 0;
         order: 1;
     }
 }
@@ -792,8 +801,10 @@ header {
     flex-direction: column;
     gap: 24px;
     padding: 32px;
+    border-radius: 0 0 10px 10px;
 
     @include breakpoint("medium") {
+        border-radius: 0 10px 10px 0;
         padding: 58px;
     }
 
@@ -822,6 +833,12 @@ header {
 
 }
 
+.reverse-block-right {
+    @include breakpoint("medium") {
+        border-radius: 10px 0 0 10px;
+    }
+}
+
 .work-tools {
     display: flex;
     flex-wrap: wrap;
@@ -837,7 +854,7 @@ header {
 //-----------------------------Testimonials----------------------//
 
 .testimonials {
-    background-color: #f9fafb;
+    background-color: $mainlight;
 }
 
 .testimonials-content {
@@ -880,7 +897,7 @@ header {
     gap: 24px;
     border-radius: 12px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 4px 3px 0 rgba(0, 0, 0, 0.07);
-    background-color: #fff;
+    background-color: $white;
 
     @include breakpoint("medium") {
         padding: 48px;
@@ -1062,7 +1079,7 @@ header {
 //-----------------------------FOOTER----------------------------//
 
 footer {
-    background-color: #f9fafb;
+    background-color: $mainlight;
 }
 
 .footer-content {

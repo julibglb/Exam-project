@@ -385,6 +385,20 @@ header {
   top: 0;
   width: 100%;
   z-index: 100;
+  background: rgba(255, 255, 255, 0.31);
+  box-shadow: 0 4px 30px rgba(129, 129, 129, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media (min-width: 1025px) {
+  header {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
 }
 
 .header-content {
@@ -393,20 +407,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.31);
-  box-shadow: 0 4px 30px rgba(129, 129, 129, 0.1);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-@media (min-width: 1025px) {
-  .header-content {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: none;
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
 }
 
 .header-logo {
@@ -507,7 +507,7 @@ header {
   right: 0;
   width: 320px;
   height: 91px;
-  background-color: white;
+  background-color: #fff;
   z-index: -1;
 }
 .mobile-toggle-logo span {
@@ -623,6 +623,10 @@ header {
   background-color: #4b5563;
   color: #fff;
   font-weight: 500;
+}
+.header-theme-download a:visited {
+  color: #fff;
+  background-color: #111827;
 }
 
 .header-theme {
@@ -844,6 +848,7 @@ header {
   .about-me-content {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 }
 
@@ -965,6 +970,7 @@ header {
 .tool-block img {
   width: 64px;
   height: 64px;
+  background-color: transparent;
   transition: transform 0.2s ease;
 }
 .tool-block img:hover {
@@ -1134,11 +1140,12 @@ header {
 .photo-project {
   margin: 0 auto;
   background-color: #f9fafb;
-  border-bottom: 1px solid #f3f4f6;
   padding: 32px;
+  border-radius: 10px 10px 0 0;
 }
 @media (min-width: 1025px) {
   .photo-project {
+    border-radius: 10px 0 0 10px;
     padding: 48px;
   }
 }
@@ -1157,6 +1164,7 @@ header {
 
 @media (min-width: 1025px) {
   .reverse-block {
+    border-radius: 0 10px 10px 0;
     order: 1;
   }
 }
@@ -1166,9 +1174,11 @@ header {
   flex-direction: column;
   gap: 24px;
   padding: 32px;
+  border-radius: 0 0 10px 10px;
 }
 @media (min-width: 1025px) {
   .project-info {
+    border-radius: 0 10px 10px 0;
     padding: 58px;
   }
 }
@@ -1192,6 +1202,12 @@ header {
   text-align: left;
   color: #4b5563;
   margin-top: 0;
+}
+
+@media (min-width: 1025px) {
+  .reverse-block-right {
+    border-radius: 10px 0 0 10px;
+  }
 }
 
 .work-tools {
@@ -1492,13 +1508,169 @@ footer {
 }
 
 body.dark {
-  background-color: black;
+  background-color: #030712;
 }
-
-.night-theme.dark {
+body.dark header {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.31);
+}
+body.dark .night-theme {
   display: block;
 }
-
-.light-theme.dark {
+body.dark .light-theme {
   display: none;
+}
+body.dark .header-logo {
+  color: #f9fafb;
+}
+body.dark .header-navigation {
+  background-color: #030712;
+}
+@media (min-width: 1025px) {
+  body.dark .header-navigation {
+    background-color: unset;
+  }
+}
+body.dark .header-navigation a {
+  color: #d1d5db;
+}
+body.dark .mobile-toggle-logo {
+  background-color: #030712;
+  color: #f9fafb;
+}
+body.dark .mobile-burger-icon span {
+  background-color: #f9fafb;
+}
+body.dark .mobile-burger-icon::before, body.dark .mobile-burger-icon::after {
+  background-color: #f9fafb;
+}
+body.dark .header-theme-download a {
+  background-color: #fff;
+  color: #030712;
+}
+body.dark .header-theme-download a:hover {
+  background-color: #4b5563;
+  color: #030712;
+}
+body.dark .header-theme-download a:visited {
+  background-color: #fff;
+  color: #030712;
+}
+body.dark .header-theme p {
+  color: #f9fafb;
+}
+body.dark .name-description p {
+  color: #d1d5db;
+}
+body.dark .title-name h1 {
+  color: #f9fafb;
+}
+body.dark .location-hire-block p {
+  color: #d1d5db;
+}
+body.dark .photo-block::before {
+  background-color: #374151;
+}
+body.dark .photo-block img {
+  outline: 10px solid #030712;
+}
+body.dark .about-me {
+  background-color: #111827;
+}
+body.dark #about {
+  color: #d1d5db;
+  background-color: #374151;
+}
+body.dark .about-me-photo {
+  box-shadow: -11px 11px #374151, 11px 11px #374151;
+}
+@media (min-width: 1025px) {
+  body.dark .about-me-photo {
+    box-shadow: -40px 40px #374151;
+  }
+}
+body.dark .about-me-photo img {
+  border: solid 8px #111827;
+}
+body.dark .my-biography h3 {
+  color: #f9fafb;
+}
+body.dark .my-biography p,
+body.dark .my-biography span {
+  color: #d1d5db;
+}
+body.dark .skills-content h3,
+body.dark .experience-section h3,
+body.dark .work-content h3,
+body.dark .testimonials-content h3,
+body.dark .title-contact h3 {
+  color: #d1d5db;
+  background-color: #374151;
+}
+body.dark .skills-content p,
+body.dark .experience-section p,
+body.dark .work-content p,
+body.dark .testimonials-content p,
+body.dark .title-contact p {
+  color: #d1d5db;
+}
+body.dark .tool-block span {
+  color: #d1d5db;
+}
+body.dark .experience {
+  background-color: #111827;
+}
+body.dark .experience-block {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+body.dark .position h4 {
+  color: #f9fafb;
+}
+body.dark .photo-project {
+  background-color: #374151;
+}
+body.dark .project-info {
+  background-color: #1f2937;
+}
+body.dark .project-info h4 {
+  color: #f9fafb;
+}
+body.dark .work-tools span {
+  color: #d1d5db;
+  background-color: #374151;
+}
+body.dark .testimonials {
+  background-color: #111827;
+}
+body.dark .response {
+  background-color: #1f2937;
+}
+body.dark .response p {
+  color: #d1d5db;
+}
+body.dark .name-respondent h4 {
+  color: #f9fafb;
+}
+body.dark .name-respondent span {
+  color: #d1d5db;
+}
+body.dark .connection-with-me input {
+  background-color: #030712;
+  color: #f9fafb;
+}
+body.dark .contact-platforms span {
+  color: #d1d5db;
+}
+body.dark footer {
+  background-color: #111827;
+}
+body.dark .footer-content {
+  color: #d1d5db;
+}
+body.dark .footer-content a {
+  color: #d1d5db;
 }

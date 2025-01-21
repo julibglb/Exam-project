@@ -1,11 +1,237 @@
 body.dark {
-    background-color: black;
-}
+    background-color: $darkblue;
 
-.night-theme.dark {
-    display: block;
-}
+    header {
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.2px);
+        -webkit-backdrop-filter: blur(6.2px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.31);
+    }
+    
+    .night-theme {
+        display: block;
+    }
+    
+    .light-theme {
+        display: none;
+        
+    }
 
-.light-theme.dark {
-    display: none;
+    .header-logo {
+        color: $mainlight;
+    }
+
+    .header-navigation {
+        background-color: $darkblue;
+
+        @include breakpoint("medium") {
+            background-color: unset;
+        }
+
+        a {
+            color: $greywhite;
+        }
+    }
+
+    .mobile-toggle-logo {
+        background-color: $darkblue;
+        color: $mainlight;
+    }
+
+    .mobile-burger-icon {
+        span {
+            background-color: $mainlight;
+        }
+
+        &::before,
+        &::after {
+            background-color: $mainlight;
+        }
+    }
+
+    .header-theme-download {
+        a {
+            background-color: $white;
+            color: $darkblue;
+
+            &:hover {
+                background-color: $grey;
+                color: $darkblue;
+            }
+    
+            &:visited {
+                background-color: $white;
+                color: $darkblue;
+            }
+        }
+    }
+
+    .header-theme {
+        p {
+            color: $mainlight;
+        }
+    }
+
+    .name-description {
+        p {
+            color: $greywhite;
+        }
+    }
+
+    .title-name {
+        h1 {
+            color: $mainlight;
+        }
+    }
+
+    .location-hire-block {
+        p {
+            color: $greywhite;
+        }
+    }
+
+    .photo-block {
+        &::before{
+            background-color: $lightblue;
+        }
+
+        img {
+            outline: 10px solid $darkblue;
+        }
+    }
+
+    .about-me {
+        background-color: $darkgrey;
+    }
+
+    #about {
+        color: $greywhite;
+        background-color: $lightblue;
+    }
+
+    .about-me-photo {
+        box-shadow: -11px 11px $lightblue, 11px 11px $lightblue;
+
+        @include breakpoint("medium") {
+            box-shadow: -40px 40px $lightblue;
+        }
+
+        img {
+            border: solid 8px $darkgrey;
+        }
+    }
+
+    .my-biography {
+        h3 {
+            color: $mainlight;
+        }
+
+        p,
+        span {
+            color: $greywhite;
+        }
+    }
+
+    .skills-content,
+    .experience-section,
+    .work-content,
+    .testimonials-content,
+    .title-contact {
+    
+        h3 {
+            color: $greywhite;
+            background-color: $lightblue;
+        }
+    
+        p {
+            color: $greywhite;
+        }
+    }
+
+    .tool-block {
+        span {
+            color: $greywhite;
+        }
+    }
+
+    .experience {
+        background-color: $darkgrey;
+    }
+
+    .experience-block {
+        background-color: $blue;
+        color: $greywhite;
+    }
+
+    .position {
+        h4 {
+            color: $mainlight;
+        }
+    }
+
+    .photo-project {
+        background-color: $lightblue;
+    }
+
+    .project-info {
+        background-color: $blue;
+
+        h4 {
+            color: $mainlight;
+        }
+    }
+
+    .work-tools {
+        span{
+            color: $greywhite;
+            background-color: $lightblue;
+        }
+    }
+
+    .testimonials {
+        background-color: $darkgrey;
+    }
+
+    .response {
+        background-color: $blue;
+
+        p {
+            color: $greywhite;
+        }
+    }
+
+    .name-respondent {
+        h4 {
+            color: $mainlight;
+        }
+
+        span {
+            color: $greywhite;
+        }
+    }
+
+    .connection-with-me {
+        input {
+            background-color: $darkblue;
+            color: $mainlight;
+        }
+    }
+
+    .contact-platforms {
+        span {
+            color: $greywhite;
+        }
+    }
+
+    footer {
+        background-color: $darkgrey;
+    }
+    
+    .footer-content {
+        color: $greywhite;
+        a {
+            color: $greywhite;
+        } 
+    }
 }
