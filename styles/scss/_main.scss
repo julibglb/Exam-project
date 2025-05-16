@@ -409,6 +409,7 @@ header {
             -webkit-box-shadow: 0 0 0 0 rgba(44, 204, 71, 0);
         }
     }
+
     @keyframes pulse {
         0% {
         -moz-box-shadow: 0 0 0 0 rgba(44, 204, 129, 0.4);
@@ -426,7 +427,7 @@ header {
 }
         
 
-.link-socia {
+.social-media {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -724,7 +725,6 @@ header {
         margin-left: 27px;
         max-width: 414px;
     }
-
 }
 
 //------------------------------WORK----------------------------//
@@ -789,7 +789,6 @@ header {
 }
 
 .reverse-block {
-    
     @include breakpoint("medium") {
         border-radius: 0 10px 10px 0;
         order: 1;
@@ -807,7 +806,6 @@ header {
         border-radius: 0 10px 10px 0;
         padding: 58px;
     }
-
 
     h4 {
         font-size: 18px;
