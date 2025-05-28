@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="./styles/css/style.css">
+</head>
+<body>
+    <header>
+      <div class="header-content">
+        <a href="/" class="image-logo">
+            <img src="./assets/icons/Logo Here.png" alt="logo">
+        </a>
+        <div class="main-menu">
+            <input type="checkbox" class="mobile-toggle" name="mobile-toggle" id="mobile-toggle">
+            <label class="mobile-burger-icon" for="mobile-toggle">
+                <span></span>
+            </label>
+            <nav class="header-navigation">
+                <a href="/">Home</a>
+                <a href="#">Features</a>
+                <a href="#">Blog</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+        <div class="header-user-basket">
+            <img src="./assets/icons/user black.svg" alt="user icon">
+            <img src="./assets/icons/basket black.svg" alt="basket icon">
+        </div>
+      </div>  
+    </header>
+    <main class="main-content">
+        <div class="main-title">
+            <h1>Contact Us</h1>
+            <p>Any question or remarks? Just write us a message!</p>
+        </div>
+        <div class="contact-info-form">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p>Say something to start a live chat!</p>
+                <a href="tel:+380979715860" class="contact-info-group">
+                    <img src="./assets/icons/phone.svg" alt="phone icon">
+                    <p>+38 (097) 971-58-60</p>
+                </a>
+                <a href="mailto:julia.bogolub@gmail.com" class="contact-info-group">
+                    <img src="./assets/icons/mail.svg" alt="mail icon">
+                    <p>julia.bogolub@gmail.com</p>
+                </a>
+                <a href="https://maps.app.goo.gl/p5JrVvzfyXd615Wn8" class="contact-info-group" target="_blank">
+                    <img src="./assets/icons/location.svg" alt="location icon">
+                    <p>Nemyrivske highway, 94E, Vinnytsia, Vinnytsia region, 21006</p>
+                </a>
+                <div class="contact-socia">
+                    <a href="https://twitter.com/?lang=uk" target="_blank">
+                        <img src="./assets/icons/twitter.svg" alt="twitter">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="./assets/icons/insta.svg" alt="instagram icon">
+                    </a>
+                    <a href="https://www.twitch.tv/" target="_blank">
+                        <img src="./assets/icons/twitch.svg" alt="twitch icon">
+                    </a>
+                </div>
+                <img src="./assets/icons/Ellipse big.svg" alt="ellipse">
+                <img src="./assets/icons/Ellipse small.png" alt="ellipse" class="ellipse-small">
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="general-data">
+                        <div class="row">
+                            <label for="first-name" class="first-name">First Name</label>
+                            <input type="text"  placeholder="I" class="first-name" name="first-name" id="first-name">
+                        </div>
+                        <div class="row">
+                            <label for="last-name" class="last-name">Last Name</label>
+                            <input type="text" class="last-name" placeholder="Julia" name="last-name" id="last-name" required>
+                        </div>
+                        <div class="row">
+                            <label for="email" class="email">Email</label>
+                            <input type="email" class="email" name="email" id="email" required>
+                        </div>
+                        <div class="row">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="phone" placeholder="+1 012 3456 789" name="phone-number" id="phone-number" required>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Select Subject?</legend>
+                        <div class="select-subject">
+                            <div class="select">
+                                <input type="radio" name="select" id="GI1" value="General Inquiry">
+                                <label for="GI1">General Inquiry</label>
+                            </div>
+                            <div class="select">
+                                <input type="radio" name="select" id="GI2" value="General Inquiry">
+                                <label for="GI2">General Inquiry</label>
+                            </div>
+                            <div class="select">
+                                <input type="radio" name="select" id="GI3" value="General Inquiry">
+                                <label for="GI3">General Inquiry</label>
+                            </div>
+                            <div class="select">
+                                <input type="radio" name="select" id="GI4" value="General Inquiry">
+                                <label for="GI4">General Inquiry</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="message">
+                        <p>Message</p>
+                        <textarea placeholder="White your message.." ></textarea>
+                        <button type="submit">Send Message</button>
+                    </div>
+                    <img src="./assets/icons/letter_send 1.png" alt="letter">
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-title">
+                <img src="./assets/icons/logo.svg" alt="logo">
+                <span></span>
+            </div>
+            <div class="footer-content">
+                <div class="footer-reach-company">
+                    <div class="footer-reach">
+                        <h3>Reach us</h3>
+                        <div class="footer-contact-us">
+                            <a href="tel:+380979715860" class="footer-contact">
+                                <img src="./assets/icons/phone.svg" alt="phone icon">
+                                <p>+38 (097) 971-58-60</p>
+                            </a>
+                            <a href="mailto:julia.bogolub@gmail.com" class="footer-contact">
+                                <img src="./assets/icons/mail.svg" alt="mail icon">
+                                <p>julia.bogolub@gmail.com</p>
+                            </a>
+                            <a href="https://maps.app.goo.gl/p5JrVvzfyXd615Wn8" class="footer-contact" target="_blank">
+                                <img src="./assets/icons/location.svg" alt="location icon">
+                                <p>Nemyrivske highway, 94E, Vinnytsia, Vinnytsia region, 21006</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-name-column">Company</h3>
+                        <a href="/">About</a>
+                        <a href="/">Contact</a>
+                        <a href="/">Blogs</a>
+                    </div>
+                </div>
+                <div class="footer-legal-links">
+                    <div class="footer-column">
+                        <h3 class="footer-name-column">Legal</h3>
+                        <a href="/">Privacy Policy</a>
+                        <a href="/">Terms &amp; Services</a>
+                        <a href="/">Terms of Use</a>
+                        <a href="/">Refund Policy</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-name-column">Quick Links</h3>
+                        <a href="/">Techlabz Keybox</a>
+                        <a href="/">Downloads</a>
+                        <a href="/">Forum</a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <label for="newsletter">Join Our Newsletter</label>
+                    <div class="footer-input-button">
+                        <input type="email" placeholder="Your email address">
+                        <button>Subscribe</button>
+                    </div>
+                    <span>*  Will send you weekly updates for your better tool management.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script/index.js"></script>
+
+</body>
+</html>

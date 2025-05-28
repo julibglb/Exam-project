@@ -1,0 +1,1832 @@
+.container {
+    padding: 0 24px;
+    max-width: 1240px;
+
+    @include breakpoint("large") {
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+.text-style-green {
+    color: $green;
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    min-width: 320px;
+}
+
+// --------------------------------------- HEADER ---------------------------------- //
+header {
+    box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.25);
+
+    @include breakpoint("medium") {
+        box-shadow: unset;
+    }
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0;
+}
+
+.image-logo {
+    width: 94px;
+    margin-right: auto;
+    margin-left: 15px;
+
+    @include breakpoint("medium") {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.main-menu {
+    order: -1;
+
+    @include breakpoint("medium") {
+        order: 0;
+        width: 545px;
+    }
+}
+
+.mobile-toggle,
+.mobile-account {
+    display: none;
+}
+
+.search {
+    display: none;
+
+    @include breakpoint("medium") {
+        display: block;
+    }
+}
+
+.account-buttons {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 41px 30px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background-color: $white;
+    box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .8s;
+   
+
+    @include breakpoint("medium") {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        position: static;
+        width: auto;
+        height: auto;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        align-items: center;
+        transition: unset;
+    }
+
+    button {
+        font-family: SourceSansPro;
+        font-size: 16px;
+        font-weight: 600;
+        border: 0;
+        line-height: 1.25;
+    }
+}
+
+#mobile-account:checked + label.mobile-account-icon + div.account-buttons {
+    opacity: 1;
+    visibility: visible;    
+}
+
+.search {
+    position: relative;
+}
+
+.search-box {
+    display: none;
+}
+
+.search-input {
+    display: none;
+}
+
+#search-box:checked + label.search-box-img + input.search-input {
+    position: absolute;
+    top: -7px;
+    right: 25px;
+    width: 350px;
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid $grey;
+
+    &::placeholder {
+        font-family: Poppins;
+        font-size: 12px;
+    }
+}
+
+.button-login-register {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint("medium") {
+        width: 204px;
+    }
+}
+
+.login-button {
+    background-color: $green;
+    padding: 12px 24px;
+    border-radius: 5px;
+    margin-right: 8px;
+    color: $white;
+
+    @include breakpoint("medium") {
+        padding: 8px 18px;
+        background-color: $white;
+        color: $green;
+        margin-left: 17px;
+    }
+}
+
+.regicter-button {
+    color: $white;
+    background-color: $green;
+    padding: 12px 24px;
+    border-radius: 5px;
+}
+
+.header-navigation {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 91px;
+    background-color: $white;
+    flex-direction: column;
+    padding: 30px 20px;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s;
+
+    @include breakpoint("medium") {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+        position: static;
+        width: auto;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    a {
+        font-family: "Open Sans";
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 20px;
+        color: $grey;
+
+        @include breakpoint("medium") {
+            width: calc(20% - 12px);
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+#mobile-toggle:checked + label.mobile-burger-icon + nav.header-navigation {
+    opacity: 1;
+    visibility: visible; 
+}
+
+.mobile-burger-icon {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+    @include breakpoint("medium") {
+        display: none;
+    }
+
+    span {
+        height: 2px;
+        width: 22px;
+        background-color: $black;
+        display: block;
+        opacity: 1;
+        transition: opacity .1s;
+    }
+
+    &::before,
+    &::after {
+        content: " ";
+        width: 22px;
+        height: 2px;
+        background-color: $black;
+        display: block;
+        position: absolute;
+        left: 5px;
+        transition: transform .3s;
+    }
+
+    &::before {
+        top: 8px;
+        transform-origin: top left;
+    }
+
+    &::after {
+        bottom: 8px;
+        transform-origin: bottom left;
+    }
+}
+
+.mobile-account-icon {
+    width: 28px;
+    height: 28px;
+
+    @include breakpoint("medium") {
+        display: none;
+    }
+}
+
+#mobile-toggle:checked + label.mobile-burger-icon {
+    span {
+        opacity: 0;
+    }
+
+    &::before {
+        transform: rotate(42deg);
+    }
+
+    &::after {
+        transform: rotate(-42deg);
+    }
+}
+
+
+
+//-----------------------HEADER CONTENT---------------//
+.header-bottom {
+    padding-bottom: 50px;
+    position: relative;
+    margin-bottom: 74px;
+
+    &::after {
+        display: block;
+        height: 100%;
+        background-color: #e4ffff;
+        width: 107px;
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 24px;
+        z-index: -1;
+    }
+}
+
+.top-wraper {
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @include breakpoint("large") {
+        width: 100%;
+    }
+}
+
+.top-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    padding: 68px 0;
+    margin: 0 auto;
+
+    @include breakpoint("large"){
+        max-width: 580px;
+    }
+    
+
+    h1 {
+        font-family: Poppins;
+        font-size: 32px;
+        font-weight: bold;  
+        line-height: normal;
+        margin-bottom: 40px;
+        max-width: 300px;
+
+        @include breakpoint("large") {
+            font-size: 60px;
+            max-width: 580px;
+        }
+    }
+
+    button {
+        @include buttonPrimary;
+        
+    }
+}
+
+.middle-content {
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto;
+    font-family: Poppins;
+    margin-bottom: 64px;
+
+    & > img {
+        display: block;
+        width: 260px;
+        height: auto;
+        margin-left: auto;
+        margin-right: 39px;
+        border-radius: 24px 24px 60px 24px;
+        
+        @include breakpoint("large") {
+            width: 431px;
+            height: auto;
+        }
+    }
+
+}
+
+.instructors {
+    color: $grey;
+    position: absolute;
+    top: 138px;
+    left: 6px;
+    width: 142px;
+    box-shadow: 0 0 37.6px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    font-size: 10.9px;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    border-radius: 7px 7px 16px 7px;
+    padding: 9px 13px 0px 13px;
+
+    @include breakpoint("small") {
+        left: -74px;
+        border-radius: 14px 14px 30px 14px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+        width: 262px;
+        padding: 18px 24px 0px 24px;
+        top: 222px;
+        left: -150px;
+    }
+}
+
+.instructors-img {
+    margin-top: 10px;
+}
+
+.instructors-img img {
+    width: 27px;
+
+    @include breakpoint("large") {
+        width: 50px;
+    }
+}
+
+.instructors-img img:not(:first-child) {
+    margin-left: -15px;
+
+    @include breakpoint("large") {
+        margin-left: -23px;
+    }
+}
+
+.students {
+    width: 77px;
+    color: $grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9.1px 7.8px 4.4px;
+    box-shadow: 0 0 25.8px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    border-radius: 4px 4px 10px 4px;
+    position: absolute;
+    bottom: 22px;
+    right: 27px;
+
+    @include breakpoint("large") {
+        width: 129px;
+        padding: 15px 13px 8px 13px;
+        border-radius: 7px 7px 17px 7px;
+        bottom: 27px;
+        right: -70px;
+    }
+
+    img {
+        width: 18px;
+    
+        @include breakpoint("large") {
+            width: 30px;
+        }
+    }
+
+    p {
+        font-size: 7.2px;
+        font-weight: 500;
+        text-align: center;
+        line-height: normal;
+
+        @include breakpoint("large") {
+            font-size: 12px;
+        }
+    }
+
+    span {
+        font-size: 14.5px;
+        font-weight: 600;
+        margin: 3px 0;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            margin: 7.5px;
+        }
+        
+    }
+}
+
+.bottom-content {
+    font-family: Poppins;
+    font-size: 14.3px;
+    font-weight: normal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px 10px;
+
+    @include breakpoint("small") {
+        justify-content: center;
+        gap: 24px 18px;
+    }
+
+    @include breakpoint("large") {
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}
+
+.possibility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: calc(50% - 5px);
+    gap: 10px;
+    padding: 9px 0px 9px 15px;
+    border-radius: 4.5px;
+    background-color: $blue;
+
+    @include breakpoint("small") {
+        width: calc(33% - 10px);
+    }
+}
+
+.possibility:last-child:nth-child(odd) {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        max-width: calc(33% - 10px);
+        margin: 0;
+    }
+
+    @include breakpoint("large") {
+        width: calc(33% - 10px);
+    }
+}
+
+//---------------------TOP CATEGORIES------------//
+
+.top-categories {
+    margin-bottom: 57px;
+
+    @include breakpoint("large") {
+        margin-bottom: 97px;
+    }
+}
+
+.categories-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-family: Poppins;
+
+    h3 {
+        width: 225px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;  
+        color: $grey;
+
+        @include breakpoint("small") {
+            width: auto;
+            font-size: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $grey;
+        font-size: 14px;
+        font-weight: normal;
+
+        @include breakpoint("small") {
+            font-size: 19px;
+        }
+        
+        @include breakpoint("large") {
+            font-size: 24px;
+        }
+    }
+}
+
+
+.scroll {
+    display: none;
+
+    @include breakpoint("large") {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.scroll-vector {
+    position: absolute;
+    right: 32px;
+    top: 186px;
+    z-index: 2;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &-left {
+        right: unset;
+        left: 32px;
+    }
+}
+
+
+.categories-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+
+    @include breakpoint("large") {
+        margin: 0 -15px;
+    }
+
+    span {
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+
+        @include breakpoint("large") {
+            font-size: 32px;  
+            bottom: 10px;
+            left: 23px;
+            top: unset;
+            transform: unset;
+        }
+    }
+}
+
+.categories-card {
+    width: calc(33% - 8px);
+    height: 31vw;
+    position: relative;
+    max-height: 432px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 5px;
+        
+        @include breakpoint("large") {
+            border-radius: 0px;
+        }
+    }
+
+    @include breakpoint("small") {
+        width: calc(25% - 12px);
+        height: 25vw
+    }
+
+    @include breakpoint("large") {
+        width: 25%;
+        padding: 0 15px;
+        height: 432px;
+    }
+}
+
+
+.card-2, .card-3 {
+    display: none;
+
+    @include breakpoint("small") {
+        display: block;
+    }
+}
+
+.card-5 {
+    @include breakpoint("small") {
+        display: none;
+    }
+}
+
+//-----------------------POPULAR COURSES---------------//
+
+.popular-courses-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Poppins;
+    margin-bottom: 23px;
+
+    @include breakpoint("large") {
+        margin-bottom: 64px;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        color: $grey; 
+
+        @include breakpoint("small") {
+            font-size: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+
+
+}
+
+.courses-button {
+    position: relative;
+
+    a {
+        font-size: 12px;
+        font-weight: normal;
+        color: $white;
+        padding: 4px 8px 4px 27px;
+        border-radius: 28.3px;
+        background-color: $green;
+        text-decoration: none;
+
+        @include breakpoint("small") {
+            font-size: 15px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 18px;
+            padding: 8px 16px 8px 54px;
+        }
+    }
+
+    img {
+        position: absolute;
+        width: 12px;
+        left: 10px;
+        top: 4px;
+
+        @include breakpoint("large") {
+            width: 17px;
+            left: 22px;
+            top: 2px; 
+        }
+    }
+}
+
+.popular-courses-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 33px;
+
+    @include breakpoint("small") {
+        margin-bottom: 60px;
+    }
+
+    @include breakpoint("large") {
+        margin-bottom: 90px;
+    }
+}
+
+.courses-card {
+    font-family: Poppins;
+    width: calc(50% - 8px);
+    margin-bottom: 14px;
+    box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+    background-color: #fff;
+
+    @include breakpoint("small") {
+        width: calc(33% - 11px);
+        max-width: 392px;
+        margin-bottom: 22px;
+    }
+
+    @include breakpoint("large") {
+        width: calc(33% - 24px);
+        max-width: 392px;
+        margin-bottom: 31px;
+    }
+
+    & > img {
+        width: 100%;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+    }
+}
+
+.courses-name {
+    position: relative;
+
+    p {
+        width: 80%;
+        height: 41px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.43;
+        color: $grey;
+        margin: 2px 17px 4px 14px;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            width: 76%;
+            height: 72px;
+            margin: 24px 0px 42px 24px;
+        }
+    }
+
+}
+
+.courses-rating {
+    position: absolute;
+    right: 6px;
+    top: 0px;
+
+    @include breakpoint("large") {
+        right: 24px;
+        top: 8px;
+    }
+
+    span {
+        font-size: 10px;
+
+        @include breakpoint("large") {
+            font-size: 14px;
+        }
+    }
+
+    img {
+        height: 9px;
+        width: auto;
+        transform: translateY(1px);
+
+        @include breakpoint("large") {
+            width: 15px;
+            height: auto;
+        }
+    }
+}
+
+.course-price-info {
+    display: block; 
+
+    @include breakpoint("large") {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 24px 14px 10px;
+    }
+}
+
+.course-price {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 4px 0px 12px 14px;
+    
+    @include breakpoint("large"){
+        font-size: 24px;
+    }
+}
+
+.courses-info {
+    font-size: 12px;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 9px;
+
+    img {
+        width: 10px;
+        position: absolute;
+        left: 67px;
+        top: 2px;
+
+        @include breakpoint("large") {
+            width: 13px;
+            left: 87px;
+        }
+    }
+
+    span {
+        margin: 12px 6px 0 14px;
+
+        @include breakpoint("large") {
+            font-size: 16px;
+            margin: 14px 14px 0 14px;
+        }
+    }
+}
+
+//----------------------NEW SKILL----------------//
+
+.new-skill {
+    .courses-button {
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+
+    .courses-card:nth-child(n+5) {
+        @include breakpoint("large") {
+            display: none;
+        }
+    }
+
+    .popular-courses-cards {
+        @include breakpoint("large") {
+            position: relative;
+        }
+    }
+}
+
+.new-skill-scroll {
+    display: none;
+
+    @include breakpoint("large") {
+        display: block;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.skill-scroll {
+    position: absolute;
+    right: 32px;
+    bottom: 65px;
+    z-index: 2;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &-left {
+        right: unset;
+        left: 32px;
+    }
+}
+
+//----------------------GOOD EDUCATION----------------//  
+
+.good-education {
+    margin-bottom: 59px;
+}
+
+.good-education-content {
+    font-family: Poppins;
+    
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include breakpoint("small") {
+            font-size: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+}
+
+.job-your-education {
+    margin: 32px auto;
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    @include breakpoint("large") {
+        justify-content: flex-start;
+        margin: 75px auto;
+        align-items: flex-start;
+    }
+}
+
+.job-opportunities {
+    position: relative;
+    max-width: 396px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+
+    @include breakpoint("small") {
+        margin: 0;
+        margin-bottom: 0;
+    }
+
+    & > img {
+        width: 100%;
+        max-width: 342px;
+        border-radius: 25px 25px 63px 25px;
+
+        @include breakpoint("large") {
+            width: 392px;
+        }
+    }
+}
+
+.job-opportunities-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: -1px;
+    bottom: 91px;
+    background: $white;
+    padding: 10px 8px 22px 8px;
+    font-weight: 600;
+    box-shadow: 0 0 66.5px 0 rgba(112, 112, 112, 0.25);
+    background-color: $white;
+    border-radius: 6px 6px 15px 6px;
+
+    @include breakpoint("small") {
+        right: -36px;
+        bottom: 91px; 
+    }
+
+    @include breakpoint("large") {
+        padding: 12px 9px 26px 8px;
+        right: -39px;
+        bottom: 109px;
+    }
+
+
+    & > img {
+        width: 36px;
+
+        @include breakpoint("large") {
+            width: 41px;
+        }
+    }
+
+    p {
+        font-size: 21px;
+        margin-top: 10px;
+
+        @include breakpoint("large") {
+            font-size: 24px;
+            margin-top: 16px;
+        }
+
+        &::after {
+            content: url(/assets/icons/underscore.svg);
+            display: block;
+            width: 34px;
+            position: relative;
+            bottom: 15px;
+
+            @include breakpoint("large") {
+                font-size: 24px;
+            }
+        }
+    }
+
+    span {
+        font-size: 14px;
+        margin-top: -15px;
+
+        @include breakpoint("large") {
+            font-size: 16px;
+        }
+    }
+
+}
+
+.your-education {
+    display: flex; 
+    flex-direction: column;
+    color: $grey;
+    line-height: normal;
+
+    @include breakpoint("small") {
+        margin-left: 45px;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 67px;
+        width: 599px;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 25px;
+
+        @include breakpoint("small") {
+            font-size: 32px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 48px;
+        }
+    }
+}
+
+.educational-oppotunities {
+    display: flex;
+    flex-direction: column;
+}
+
+.facility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include breakpoint("small") {
+        font-size: 17px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+    }
+
+    img {
+        width: 30px;
+        margin-right: 15px;
+
+        @include breakpoint("small") {
+            width: 40px;
+            margin-right: 20px;
+        }
+
+        @include breakpoint("large") {
+            width: 50px;
+            margin-right: 24px;
+        }
+    }
+}
+
+.facility:not(:last-child) {
+    margin-bottom: 32px;
+}
+
+//---------------------REVIEWS-------------------//
+
+.reviews-content {
+    font-family: "Open Sans";
+    margin-bottom: 48px;
+
+    h3 {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            font-family: Poppins;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: $grey;
+            margin-bottom: 76px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;
+        }
+    }
+}
+
+.say-about-us {
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.say-about-us-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+    margin-bottom: 24px;
+    width: 100%;
+
+    @include breakpoint("small") {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 32px;
+        width: 230px;
+        margin-bottom: 0;
+    }
+
+    @include breakpoint("large") {
+        font-size: 48px;
+        width: 340px;
+    }
+
+    h4 {
+        width: 65%;
+
+        @include breakpoint("small") {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.after-underscore {
+    position: relative;
+
+    &::after{ 
+        content: url(/assets/icons/underscore\ long.svg);
+        display: block;
+        width: 50px;
+        position: absolute;
+        left: 0;
+        top: 9px;
+    }
+}
+
+.reviews-sroll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 35%;
+
+    @include breakpoint("small") {
+        width: 100%;
+        justify-content: flex-start;
+
+    }
+
+    img {
+        width: 35px;
+        
+        @include breakpoint("small") {
+            width: 50px;
+        }
+    }
+}
+
+.reviews-sroll-right {
+    @include breakpoint("small") {
+        margin-left: 48px;
+    }
+
+}
+
+.reviewers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include breakpoint("small") {
+        justify-content: flex-end; 
+        flex-shrink: 10;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 34px;
+    }
+}
+
+.reviewer {
+    width: calc(50% - 8px);
+    padding: 16px 14px 11px 14px;
+
+    @include breakpoint("small") {
+        width: calc(50% - 16px);
+    }
+
+    @include breakpoint("large") {
+        padding: 59px 48px 48px 48px;
+    }
+
+    & > p {
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        margin-top: 12px;
+        height: 82px;
+        overflow: hidden;
+        color: $grey;
+
+        @include breakpoint("small") {
+            height: 121px;
+            font-size: 15px;
+            margin-top: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 18px;
+            height: 151px;
+            margin-top: 30px;
+        }
+    }
+}
+
+.reviewer-name-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+        width: 28px;
+
+        @include breakpoint("small") {
+            width: 50px;
+        }
+
+        @include breakpoint("large") {
+            width: 70px;
+        }
+    }
+}
+
+.reviewer-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 12px;
+
+    @include breakpoint("small") {
+        font-size: 16px;
+    }
+
+    @include breakpoint("large") {
+        font-size: 20px;
+    }
+}
+
+.status {
+    font-weight: normal;
+
+    @include breakpoint("large") {
+        font-size: 18px;
+    }
+}
+
+//---------------------MEET OUR INSTRUCTORS-------------------//
+
+.meet-our-instructors-content {
+    font-family: Poppins;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 45px;
+
+        @include breakpoint("small") {
+            font-size: 24px;   
+        }
+
+        @include breakpoint("large") {
+            font-size: 32px;   
+            margin-bottom: 64px;
+        }
+    }
+}
+
+.instructor-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+
+    @include breakpoint("small") {
+        margin-bottom: 114px;   
+    }
+
+    @include breakpoint("large") {
+        margin-bottom: 175px;   
+    }
+}
+
+.card-instructor:last-child {
+    margin: 0 auto;
+
+    @include breakpoint("small") {
+        margin: 0;   
+    }    
+}
+
+.card-instructor {
+    width: calc(50% - 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 21px 9px 21px;
+    box-shadow: 0 0 20px 0 rgba(203, 203, 203, 0.25);
+
+    @include breakpoint("small") {
+        width: calc(33% - 12px);
+        padding: 24px 33px 15px 33px;    
+    }
+
+    @include breakpoint("large") {
+        width: calc(33% - 16px);
+        padding: 30px 46px 19px 46px;    
+    }
+
+    img {
+        width: 53px;
+
+        @include breakpoint("small") {
+            width: 80px;    
+        }
+
+        @include breakpoint("large") {
+            width: 114px;    
+        }
+    }
+
+    & > p {
+        font-size: 8px;
+        font-weight: normal;
+        line-height: 1.55;
+        text-align: center;
+        max-width: 200px;
+        max-height: 48px;
+        margin-top: 15px;
+
+        @include breakpoint("small") {
+            font-size: 12px;
+            max-height: 84px;
+            margin-top: 24px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 16px;
+            max-height: 105px;
+            margin-top: 30px;
+            max-width: 299px;
+        }
+    }
+}
+
+.card-instructor:not(:last-child) {
+    margin-bottom: 17px;
+
+    @include breakpoint("small") {
+        margin-bottom: 0;   
+    }
+}
+
+.instructor-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+
+    @include breakpoint("small") {
+        margin-top: 12px;
+    }
+
+    @include breakpoint("large") {
+        margin-top: 16px;
+    }
+
+    p {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: normal;  
+
+        @include breakpoint("small") {
+            font-size: 16px;
+        }
+        @include breakpoint("large") {
+            font-size: 20px;
+        }
+    }
+
+    span {
+        font-size: 8px;
+        font-weight: 500;
+
+        @include breakpoint("small") {
+            font-size: 12px;
+        }
+
+        @include breakpoint("large") {
+            font-size: 16px;
+        }
+    }
+}
+
+//--------------------CTA-------------------//
+
+.CTA {
+    background-image: url("/assets/images/lastCTA1.png");
+    height: 472px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    
+
+    @include breakpoint("small") {
+        background-image: url("/assets/images/lastCTA.png");
+
+    }
+
+    @include breakpoint("large") {
+        height: 532px;
+    }
+}
+
+.CTA-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    & > img {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            transform: translateY(56px);
+            width: 335px;
+            height: 353px;
+        }
+
+        @include breakpoint("large") {
+            transform: translateY(-55px);
+            width: 513px;
+            height: 517px;
+        }
+    }
+}
+
+.CTA-info {
+    font-family: "Open Sans";
+    text-align: center;
+    text-transform: capitalize;
+    color: $white;
+    padding: 69px 10px 70px 10px;
+    position: relative;
+    width: 400px;
+    
+    @include breakpoint("small") {
+        margin-left: 40px;
+        text-align: start;
+        padding: 30px 10px 0 10px;
+    }
+
+    @include breakpoint("large") {
+        margin-left: 80px;
+        width: 568px;   
+        padding: 41px 10px 0 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: normal;
+        margin-bottom: 24px;
+
+        @include breakpoint("small") {
+            font-size: 30px;   
+        }
+
+        @include breakpoint("large") {
+            font-size: 41px;   
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: normal;
+        margin-bottom: 64px;
+
+        @include breakpoint("small") {
+            font-size: 18px;
+            margin-bottom: 37px;  
+        }
+
+        @include breakpoint("large") {
+            font-size: 24px;   
+            margin-bottom: 89px;
+        }
+    }
+}
+
+.CTA-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include breakpoint("large") {
+        justify-content: start;
+    }
+
+    button:first-child{
+        @include buttonPrimary;
+
+        @include breakpoint("large") {
+            margin-right: 31px;
+        }
+    }
+
+    button {
+        font-family: SourceSansPro;
+        font-size: 16px;
+        font-weight: 600;
+        border: 1px solid #09B451;
+        padding: 20px 42px;
+        border-radius: 5px;
+        background-color: $white;
+        transition: 0.2s ease-in 0s;
+    
+        &:hover {
+            color: #000;
+            background-color: #fff;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    }
+}
+
+//--------------------FOOTER-------------------//
+
+.footer {
+    background-color: $black;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("small") {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        flex-wrap: wrap-reverse;
+    }
+}
+
+.footer-info-name {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint("small") {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        padding: 100px 20px 0;
+        margin-bottom: 90px;
+    }
+}
+
+.footer-form {
+    width: 100%;
+    font-family: Poppins;
+    margin-top: 63px;
+    margin-bottom: 48px;
+
+    @include breakpoint("small") {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 51px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: lighter;
+        line-height: normal;
+        color: $white;
+
+        @include breakpoint("small") {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}
+
+.email-button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 545px;
+    margin-top: 5px;
+
+    @include breakpoint("small") {
+        margin-top: 17px;
+    }
+
+    input {
+        padding: 12px 0 6px 12px;
+        width: 75%;
+        border: none;
+
+        &::placeholder {
+            font-size: 10px;
+            font-weight: 500;
+            color: #3bd27b;
+
+            @include breakpoint("small") {
+                font-size: 14px;
+            }
+        }
+    }
+
+    button {
+        font-size: 10px;
+        font-weight: normal;
+        text-align: start;
+        color: $white;
+        background-color: #3bd27b;
+        width: 25%;
+        border: none;
+        padding: 13px;
+
+        @include breakpoint("small") {
+            font-size: 14px;
+        }
+    }
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 45px;
+
+    @include breakpoint("small") {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    @include breakpoint("large") {
+        
+    }
+}
+
+.footer-info-card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33% - 15px);
+
+    a {
+        text-decoration: none;
+        color: $white;
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: normal;
+
+        @include breakpoint("large") {
+            max-width: 145px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 21px;
+        }
+    }
+}
+
+.footer-info-card:nth-child(n+4) {
+    display: none;
+
+    @include breakpoint("large") {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.footer-name {
+    display: flex;
+    flex-direction: column;
+    max-width: 296px;
+    padding-bottom: 63px;
+
+    @include breakpoint("small") {
+        padding-bottom: 0;
+        margin-right: 91px;
+    }
+
+    
+
+    h3 {
+        font-family: SourceSansPro;
+        font-size: 32.8px;
+        font-weight: 600;
+        color: $white;
+        margin-bottom: 24px;
+    }
+
+    p {
+        display: none;
+
+        @include breakpoint("small") {
+            display: block;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: normal;
+            letter-spacing: 1px;
+            color: $white;
+            margin-bottom: 31px;
+        }
+
+    }
+}
+
+.footer-name-socia {
+    display: flex;
+    flex-direction: row;
+
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        &:not(:last-child) {
+            margin-right: 24px;
+        }
+    }
+}

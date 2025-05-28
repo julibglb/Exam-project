@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -371,6 +372,10 @@ body {
   font-family: Inter;
 }
 
+body.lock-scroll {
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -524,14 +529,34 @@ header {
 .menu-navigation {
   opacity: 0;
   visibility: hidden;
-  transition: all 0.8s;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999; /* поверх усього */
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* сховане за межами екрана */
 }
 @media (min-width: 1025px) {
   .menu-navigation {
     opacity: 1;
     visibility: visible;
     transition: none;
+    display: block !important;
+    position: static; /* або відновити layout, якщо треба */
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none; /* прибрати блюр для десктопу */
+    background-color: transparent; /* або як тобі потрібно */
+    height: auto;
+    transform: none;
   }
+}
+
+#mobile-toggle:checked ~ .menu-navigation {
+  transform: translateX(0); /* з'являється */
 }
 
 #mobile-toggle:checked + label.mobile-burger-icon + div.menu-navigation {
@@ -547,6 +572,7 @@ header {
   align-items: center;
   justify-content: center;
   padding: 5px;
+  z-index: 1001;
 }
 @media (min-width: 1025px) {
   .mobile-burger-icon {
@@ -758,16 +784,16 @@ header {
   }
 }
 
-.link-socia {
+.social-media {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-.link-socia a {
+.social-media a {
   text-decoration: none;
   transition-duration: 0.2s;
 }
-.link-socia a:hover {
+.social-media a:hover {
   background-color: #f9fafb;
   border-radius: 10px;
 }
@@ -1180,6 +1206,7 @@ header {
   .project-info {
     border-radius: 0 10px 10px 0;
     padding: 58px;
+    width: 146%;
   }
 }
 .project-info h4 {
@@ -1230,6 +1257,31 @@ header {
   border-radius: 12px;
   background-color: #e5e7eb;
   margin: 0;
+}
+
+.project-button {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.project-button a button {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4b5563;
+  padding: 4px 20px;
+  border-radius: 12px;
+  background-color: #e5e7eb;
+  background-color: #4b5563;
+  color: #fff;
+  cursor: pointer;
+  border: none;
 }
 
 .testimonials {
@@ -1541,6 +1593,14 @@ body.dark .mobile-toggle-logo {
   background-color: #030712;
   color: #f9fafb;
 }
+body.dark .menu-navigation {
+  background-color: #030712;
+}
+@media (min-width: 1025px) {
+  body.dark .menu-navigation {
+    background-color: unset;
+  }
+}
 body.dark .mobile-burger-icon span {
   background-color: #f9fafb;
 }
@@ -1594,6 +1654,9 @@ body.dark .about-me-photo {
 }
 body.dark .about-me-photo img {
   border: solid 8px #111827;
+}
+body.dark .social-media {
+  display: flex;
 }
 body.dark .my-biography h3 {
   color: #f9fafb;

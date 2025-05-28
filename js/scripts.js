@@ -37,4 +37,32 @@ document.getElementById('copyButton').addEventListener('click', function() {
         console.error('Помилка копіювання: ', err);
       });
   });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('mobile-toggle');
+    const menu = document.querySelector('.menu-navigation');
+    const navLinks = menu.querySelectorAll('a');
+
+    toggle.addEventListener('change', function () {
+        if (toggle.checked) {
+            document.body.classList.add('lock-scroll');
+            menu.setAttribute('tabindex', '-1'); // щоб можна було фокусуватись
+            menu.focus();
+        } else {
+            document.body.classList.remove('lock-scroll');
+            menu.removeAttribute('tabindex');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            toggle.checked = false; // знімає галочку з чекбокса
+            document.body.classList.remove('lock-scroll');
+            menu.removeAttribute('tabindex');
+        });
+    });
+});
+
+
   

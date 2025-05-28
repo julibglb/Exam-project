@@ -1,0 +1,26 @@
+//
+// Screen sizes function
+// -----------------------------------------------------------------------------
+
+@function screenSize($key) {
+
+    @if map-has-key($screenSizeMap, $key) {
+        @return map-get($screenSizeMap, $key);
+    }
+
+    @warn "Unknown #{$key} in $screenSizeMap.";
+    @return null;
+}
+
+//
+// Breakpoint Mixin
+// -----------------------------------------------------------------------------
+
+@mixin breakpoint($size) {
+    @if type-of($size) == "number" {
+        @media (min-width: $size) { @content; }
+    }
+    @else {
+        @media (min-width: screenSize($size)) { @content; }
+    }
+}

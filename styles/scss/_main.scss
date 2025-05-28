@@ -2,6 +2,11 @@ body {
     font-family: Inter;
 }
 
+body.lock-scroll {
+    overflow: hidden;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -159,14 +164,35 @@ header {
 .menu-navigation {
     opacity: 0;
     visibility: hidden;
-    transition: all 0.8s;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999; /* поверх усього */
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* сховане за межами екрана */;
 
 
     @include breakpoint("medium") {
         opacity: 1;
         visibility: visible;
         transition: none;
+        display: block !important;
+        position: static; /* або відновити layout, якщо треба */
+        backdrop-filter: none; /* прибрати блюр для десктопу */
+        background-color: transparent; /* або як тобі потрібно */
+        height: auto;
+        transform: none;
     }
+}
+
+#mobile-toggle:checked ~ .menu-navigation {
+    transform: translateX(0); /* з'являється */
+
+    
 }
 
 #mobile-toggle:checked + label.mobile-burger-icon + div.menu-navigation {
@@ -182,6 +208,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 5px;
+    z-index: 1001;
 
     @include breakpoint("medium") {
         display: none;
@@ -805,6 +832,7 @@ header {
     @include breakpoint("medium") {
         border-radius: 0 10px 10px 0;
         padding: 58px;
+        width: 146%;
     }
 
     h4 {
@@ -846,6 +874,23 @@ header {
     span{
         @include buttonPrimary;
         margin: 0;
+    }
+}
+
+.project-button {
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+        button{
+            @include buttonPrimary;
+            background-color: $grey;
+            color: $white;
+            cursor: pointer;
+            border: none;
+        }
     }
 }
 

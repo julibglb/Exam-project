@@ -39,6 +39,14 @@ body.dark {
         color: $mainlight;
     }
 
+    .menu-navigation {
+        background-color: $darkblue;
+        
+        @include breakpoint("medium") {
+            background-color: unset;
+        }
+    }
+
     .mobile-burger-icon {
         span {
             background-color: $mainlight;
@@ -120,6 +128,10 @@ body.dark {
         img {
             border: solid 8px $darkgrey;
         }
+    }
+
+    .social-media {
+        display: flex;
     }
 
     .my-biography {
