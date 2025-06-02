@@ -48,3 +48,32 @@
     color: $grey;
     margin-top: 16px;
 }
+
+@mixin imgCertf {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint("xsmall") {
+       justify-content: space-around;
+    }
+
+    img {
+        width: 255px;
+        height: 185px;
+        margin-bottom: 20px;
+        box-shadow: 5px 5px 8px 1px rgba(155, 155, 155, 0.2);
+        
+       @include breakpoint("small") {
+            width: 363px;
+            height: 276px;
+        }
+
+        @include breakpoint("medium") {
+            width: 245px;
+            height: 175px;
+        }
+    }
+}

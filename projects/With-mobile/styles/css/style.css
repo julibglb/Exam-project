@@ -1231,13 +1231,13 @@ header {
   position: absolute;
   width: 12px;
   left: 10px;
-  top: 4px;
+  top: 8px;
 }
 @media (min-width: 1281px) {
   .courses-button img {
     width: 17px;
     left: 22px;
-    top: 2px;
+    top: 7px;
   }
 }
 
@@ -1546,7 +1546,7 @@ header {
   }
 }
 .job-opportunities-badge p::after {
-  content: url(/assets/icons/underscore.svg);
+  content: url("../../assets/icons/underscore.svg");
   display: block;
   width: 34px;
   position: relative;
@@ -1714,7 +1714,7 @@ header {
   position: relative;
 }
 .after-underscore::after {
-  content: url(/assets/icons/underscore\ long.svg);
+  content: url("../../assets/icons/underscorelong.svg");
   display: block;
   width: 50px;
   position: absolute;
@@ -2011,7 +2011,7 @@ header {
 }
 
 .CTA {
-  background-image: url("/assets/images/lastCTA1.png");
+  background-image: url("../../assets/images/lastCTA1.png");
   height: 472px;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -2020,7 +2020,7 @@ header {
 }
 @media (min-width: 769px) {
   .CTA {
-    background-image: url("/assets/images/lastCTA.png");
+    background-image: url("../../assets/images/lastCTA1.png");
   }
 }
 @media (min-width: 1281px) {

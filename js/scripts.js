@@ -12,31 +12,31 @@ function toggleTheme() {
 toggleTheme();
 
 
-document.getElementById('copyButton').addEventListener('click', function() {
+document.getElementById('copyButton').addEventListener('click', function () {
     const copyText = document.getElementById('copyText');
     copyText.select(); // Виділяємо текст
     copyText.setSelectionRange(0, 99999); // Для мобільних пристроїв
     navigator.clipboard.writeText(copyText.value) // Копіюємо текст у буфер
-      .then(() => {
-        alert('Текст скопійовано: ' + copyText.value);
-      })
-      .catch(err => {
-        console.error('Помилка копіювання: ', err);
-      });
-  });
+        .then(() => {
+            alert('Текст скопійовано: ' + copyText.value);
+        })
+        .catch(err => {
+            console.error('Помилка копіювання: ', err);
+        });
+});
 
-  document.getElementById('btnCopy').addEventListener('click', function() {
+document.getElementById('btnCopy').addEventListener('click', function () {
     const textInput = document.getElementById('textInput');
     textInput.select(); // Виділяємо текст
     textInput.setSelectionRange(0, 99999); // Для мобільних пристроїв
     navigator.clipboard.writeText(textInput.value) // Копіюємо текст у буфер
-      .then(() => {
-        alert('Текст скопійовано: ' + textInput.value);
-      })
-      .catch(err => {
-        console.error('Помилка копіювання: ', err);
-      });
-  });
+        .then(() => {
+            alert('Текст скопійовано: ' + textInput.value);
+        })
+        .catch(err => {
+            console.error('Помилка копіювання: ', err);
+        });
+});
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -64,5 +64,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// certificate block view/hidden
 
-  
+const buttonCertificates = document.querySelector('#button-certificates');
+const certificatesBlock2 = document.querySelectorAll('.certificates-block-2');
+
+
+buttonCertificates.addEventListener('click', (e) => {
+    certificatesBlock2.forEach(item => {
+        item.classList.toggle('certicificate-hidden');
+    })
+})

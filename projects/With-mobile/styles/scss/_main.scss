@@ -744,12 +744,12 @@ header {
         position: absolute;
         width: 12px;
         left: 10px;
-        top: 4px;
+        top: 8px;
 
         @include breakpoint("large") {
             width: 17px;
             left: 22px;
-            top: 2px; 
+            top: 7px; 
         }
     }
 }
@@ -1057,7 +1057,7 @@ header {
         }
 
         &::after {
-            content: url(/assets/icons/underscore.svg);
+            content: url("../../assets/icons/underscore.svg");
             display: block;
             width: 34px;
             position: relative;
@@ -1220,8 +1220,8 @@ header {
 .after-underscore {
     position: relative;
 
-    &::after{ 
-        content: url(/assets/icons/underscore\ long.svg);
+    &::after { 
+        content: url("../../assets/icons/underscorelong.svg");
         display: block;
         width: 50px;
         position: absolute;
@@ -1501,7 +1501,7 @@ header {
 //--------------------CTA-------------------//
 
 .CTA {
-    background-image: url("/assets/images/lastCTA1.png");
+    background-image: url("../../assets/images/lastCTA1.png");
     height: 472px;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -1510,7 +1510,7 @@ header {
     
 
     @include breakpoint("small") {
-        background-image: url("/assets/images/lastCTA.png");
+        background-image: url("../../assets/images/lastCTA1.png");
 
     }
 

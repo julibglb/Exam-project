@@ -666,7 +666,7 @@ header {
 
 //--------------------------------EXPERIENCE-----------------------------//
 
-.experience {
+.certificates-licenses {
     background-color: $mainlight;
     padding: 64px 16px;
 
@@ -675,7 +675,7 @@ header {
     }
 }
 
-.experience-section {
+.certificates-licenses-section {
     h3 {
         @include buttonPrimary;
     }
@@ -685,75 +685,31 @@ header {
     }
 }
 
-.experience-content {
+.certificates {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin-top: 24px;
-
-    @include breakpoint("medium") {
-        gap: 48px;
-        margin-top: 48px;
-    }
-
+   
 }
 
-.experience-block {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 32px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 4px 3px 0 rgba(0, 0, 0, 0.07);
-    background-color: $white;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: $grey;
-    
-    @include breakpoint("medium") {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 48px;
-        max-width: 896px;
-    }
-
-    img {
-        width: 102px;
-        height: 28px;
-        margin-right: 92px;
-    }
-
-    span {
-        max-width: 161px;
-    }
+.certificates-block,
+.certificates-block-2{
+    @include imgCertf;
 }
 
-.position {
-    order: 1;
 
-    @include breakpoint("medium") {
-        order: 0;
-        max-width: 384px;
-    }
-
-    h4 {
-        font-size: 20px;
-        font-weight: 600;
-        line-height: 1.4;
-        letter-spacing: normal;
-        color: $darkgrey;
-        margin-bottom: 16px;
-    }
-
-    li {
-        list-style-type: disc;
-        margin-left: 27px;
-        max-width: 414px;
-    }
+.certicificate-hidden {
+    display: none;
 }
 
+#button-certificates {
+    @include buttonPrimary;
+    margin-bottom: 14px;
+    margin-top: 14px;
+    background-color: $grey;
+    color: $white;
+    cursor: pointer;
+    border: none;
+}
 //------------------------------WORK----------------------------//
 
 .work-content {
