@@ -839,6 +839,12 @@ header {
     justify-content: flex-start;
     align-items: center;
 
+    span {
+        color: $grey;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
     a {
         button{
             @include buttonPrimary;
@@ -1006,7 +1012,7 @@ header {
         }
     }
 
-    input {
+    a {
         border: none;
         padding: 0;
         font-size: 18px;
@@ -1052,10 +1058,10 @@ header {
 
 #textInput {
     display: inline-block;
-    width: 137px;
+    width: 187px;
 
     @include breakpoint("medium") {
-        width: 263px;
+        width: 347px;
     }
 }
 

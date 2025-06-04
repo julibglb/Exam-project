@@ -535,10 +535,10 @@ header {
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 999; 
+  z-index: 999; /* поверх усього */
   overflow-y: auto;
   transition: transform 0.3s ease;
-  transform: translateX(100%); 
+  transform: translateX(100%); /* сховане за межами екрана */
 }
 @media (min-width: 1025px) {
   .menu-navigation {
@@ -546,17 +546,17 @@ header {
     visibility: visible;
     transition: none;
     display: block !important;
-    position: static; 
+    position: static; /* або відновити layout, якщо треба */
     -webkit-backdrop-filter: none;
-            backdrop-filter: none; 
-    background-color: transparent; 
+            backdrop-filter: none; /* прибрати блюр для десктопу */
+    background-color: transparent; /* або як тобі потрібно */
     height: auto;
     transform: none;
   }
 }
 
 #mobile-toggle:checked ~ .menu-navigation {
-  transform: translateX(0); 
+  transform: translateX(0); /* з'являється */
 }
 
 #mobile-toggle:checked + label.mobile-burger-icon + div.menu-navigation {
@@ -1264,6 +1264,11 @@ header {
   justify-content: flex-start;
   align-items: center;
 }
+.project-button span {
+  color: #4b5563;
+  font-size: 18px;
+  font-weight: 600;
+}
 .project-button a button {
   width: -moz-max-content;
   width: max-content;
@@ -1461,7 +1466,7 @@ header {
     height: 29px;
   }
 }
-.connection-with-me input {
+.connection-with-me a {
   border: none;
   padding: 0;
   font-size: 18px;
@@ -1472,7 +1477,7 @@ header {
   color: #111827;
 }
 @media (min-width: 1025px) {
-  .connection-with-me input {
+  .connection-with-me a {
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: -0.72px;
@@ -1507,11 +1512,11 @@ header {
 
 #textInput {
   display: inline-block;
-  width: 137px;
+  width: 187px;
 }
 @media (min-width: 1025px) {
   #textInput {
-    width: 263px;
+    width: 347px;
   }
 }
 
@@ -1665,7 +1670,7 @@ body.dark .my-biography span {
   color: #d1d5db;
 }
 body.dark .skills-content h3,
-body.dark .experience-section h3,
+body.dark .certificates-licenses-section h3,
 body.dark .work-content h3,
 body.dark .testimonials-content h3,
 body.dark .title-contact h3 {
@@ -1673,7 +1678,7 @@ body.dark .title-contact h3 {
   background-color: #374151;
 }
 body.dark .skills-content p,
-body.dark .experience-section p,
+body.dark .certificates-licenses-section p,
 body.dark .work-content p,
 body.dark .testimonials-content p,
 body.dark .title-contact p {
@@ -1682,12 +1687,11 @@ body.dark .title-contact p {
 body.dark .tool-block span {
   color: #d1d5db;
 }
-body.dark .experience {
+body.dark .certificates-licenses {
   background-color: #111827;
 }
-body.dark .experience-block {
-  background-color: #1f2937;
-  color: #d1d5db;
+body.dark .certificates-block img {
+  box-shadow: 5px 5px 8px 1px #4b5563;
 }
 body.dark .position h4 {
   color: #f9fafb;
@@ -1700,6 +1704,9 @@ body.dark .project-info {
 }
 body.dark .project-info h4 {
   color: #f9fafb;
+}
+body.dark .project-button span {
+  color: #d1d5db;
 }
 body.dark .work-tools span {
   color: #d1d5db;

@@ -73,5 +73,17 @@ const certificatesBlock2 = document.querySelectorAll('.certificates-block-2');
 buttonCertificates.addEventListener('click', (e) => {
     certificatesBlock2.forEach(item => {
         item.classList.toggle('certicificate-hidden');
-    })
+    });
+
+    const isVisible = !certificatesBlock2[0].classList.contains('certicificate-hidden');
+
+    // Зміна тексту кнопки
+    buttonCertificates.textContent = isVisible ? 'Show less' : 'View all';
+
+    // Скрол до останнього блоку, якщо він став видимим
+    if (isVisible) {
+        // Отримуємо останній блок
+        const lastBlock = certificatesBlock2[certificatesBlock2.length - 1];
+        lastBlock.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
 })

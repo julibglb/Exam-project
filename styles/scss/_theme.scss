@@ -146,7 +146,7 @@ body.dark {
     }
 
     .skills-content,
-    .experience-section,
+    .certificates-licenses-section,
     .work-content,
     .testimonials-content,
     .title-contact {
@@ -167,13 +167,15 @@ body.dark {
         }
     }
 
-    .experience {
+    .certificates-licenses {
         background-color: $darkgrey;
     }
 
-    .experience-block {
-        background-color: $blue;
-        color: $greywhite;
+
+    .certificates-block {
+        img {
+            box-shadow: 5px 5px 8px 1px #4b5563;
+        }
     }
 
     .position {
@@ -191,6 +193,12 @@ body.dark {
 
         h4 {
             color: $mainlight;
+        }
+    }
+
+   .project-button {
+        span {
+            color: $greywhite;
         }
     }
 
