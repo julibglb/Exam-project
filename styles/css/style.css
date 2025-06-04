@@ -535,10 +535,10 @@ header {
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 999; /* поверх усього */
+  z-index: 999; 
   overflow-y: auto;
   transition: transform 0.3s ease;
-  transform: translateX(100%); /* сховане за межами екрана */
+  transform: translateX(100%); 
 }
 @media (min-width: 1025px) {
   .menu-navigation {
@@ -546,17 +546,17 @@ header {
     visibility: visible;
     transition: none;
     display: block !important;
-    position: static; /* або відновити layout, якщо треба */
+    position: static; 
     -webkit-backdrop-filter: none;
-            backdrop-filter: none; /* прибрати блюр для десктопу */
-    background-color: transparent; /* або як тобі потрібно */
+            backdrop-filter: none; 
+    background-color: transparent; 
     height: auto;
     transform: none;
   }
 }
 
 #mobile-toggle:checked ~ .menu-navigation {
-  transform: translateX(0); /* з'являється */
+  transform: translateX(0); 
 }
 
 #mobile-toggle:checked + label.mobile-burger-icon + div.menu-navigation {
