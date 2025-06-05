@@ -650,10 +650,6 @@ header {
   color: #fff;
   font-weight: 500;
 }
-.header-theme-download a:visited {
-  color: #fff;
-  background-color: #111827;
-}
 
 .header-theme {
   display: flex;
@@ -663,6 +659,7 @@ header {
   border: none;
   background-color: transparent;
   padding: 0;
+  cursor: pointer;
 }
 .header-theme p {
   font-size: 16px;
@@ -1475,10 +1472,11 @@ header {
   letter-spacing: -0.36px;
   text-align: center;
   color: #111827;
+  text-decoration: none;
 }
 @media (min-width: 1025px) {
   .connection-with-me a {
-    font-size: 36px;
+    font-size: 30px;
     line-height: 1.11;
     letter-spacing: -0.72px;
   }
@@ -1516,7 +1514,7 @@ header {
 }
 @media (min-width: 1025px) {
   #textInput {
-    width: 347px;
+    width: 370px;
   }
 }
 
@@ -1545,12 +1543,17 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   line-height: 1.43;
   letter-spacing: normal;
   text-align: left;
   color: #4b5563;
+}
+@media (min-width: 481px) {
+  .footer-content {
+    font-size: 14px;
+  }
 }
 .footer-content span {
   width: 1px;
@@ -1727,7 +1730,7 @@ body.dark .name-respondent h4 {
 body.dark .name-respondent span {
   color: #d1d5db;
 }
-body.dark .connection-with-me input {
+body.dark .connection-with-me a {
   background-color: #030712;
   color: #f9fafb;
 }

@@ -293,11 +293,6 @@ header {
             color: $white;
             font-weight: 500;
         }
-
-        &:visited {
-            color: $white;
-            background-color: $darkgrey;
-        }
     }
 }
 
@@ -309,6 +304,7 @@ header {
     border: none;
     background-color: transparent;
     padding: 0;
+    cursor: pointer;
 
     p {
         font-size: 16px;
@@ -1021,9 +1017,10 @@ header {
         letter-spacing: -0.36px;
         text-align: center;
         color: $darkgrey;
+        text-decoration: none;
 
         @include breakpoint("medium") {
-            font-size: 36px;
+            font-size: 30px;
             line-height: 1.11;
             letter-spacing: -0.72px;
         }
@@ -1061,7 +1058,7 @@ header {
     width: 187px;
 
     @include breakpoint("medium") {
-        width: 347px;
+        width: 370px;
     }
 }
 
@@ -1093,12 +1090,16 @@ footer {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     line-height: 1.43;
     letter-spacing: normal;
     text-align: left;
     color: $grey;
+
+    @include breakpoint("xsmall"){
+        font-size: 14px;
+    }
 
     span {
         width: 1px;
