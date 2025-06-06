@@ -1,3 +1,4 @@
+// change theme dark/light
 function toggleTheme() {
     const button = document.querySelector('.header-theme');
     const body = document.querySelector('body');
@@ -11,32 +12,26 @@ function toggleTheme() {
 
 toggleTheme();
 
+// Copy text 
+const copyEmailBtn = document.getElementById("copyButton");
+const copyPhoneBtn = document.getElementById("btnCopy");
 
-document.getElementById('copyButton').addEventListener('click', function () {
-    const copyText = document.getElementById('copyText');
-    copyText.select(); // Виділяємо текст
-    copyText.setSelectionRange(0, 99999); // Для мобільних пристроїв
-    navigator.clipboard.writeText(copyText.value) // Копіюємо текст у буфер
-        .then(() => {
-            alert('Текст скопійовано: ' + copyText.value);
-        })
-        .catch(err => {
-            console.error('Помилка копіювання: ', err);
-        });
-});
+function copyEmail() {
+    const email = "julia.bogolub@gmail.com";
+    navigator.clipboard.writeText(email)
+        .then(() => alert("Email скопійовано!"))
+        .catch(err => console.error("Помилка копіювання email:", err));
+}
 
-document.getElementById('btnCopy').addEventListener('click', function () {
-    const textInput = document.getElementById('textInput');
-    textInput.select(); // Виділяємо текст
-    textInput.setSelectionRange(0, 99999); // Для мобільних пристроїв
-    navigator.clipboard.writeText(textInput.value) // Копіюємо текст у буфер
-        .then(() => {
-            alert('Текст скопійовано: ' + textInput.value);
-        })
-        .catch(err => {
-            console.error('Помилка копіювання: ', err);
-        });
-});
+function copyPhone() {
+    const phone = "+380979715860";
+    navigator.clipboard.writeText(phone)
+        .then(() => alert("Номер телефону скопійовано!"))
+        .catch(err => console.error("Помилка копіювання телефону:", err));
+}
+
+copyEmailBtn.addEventListener("click", copyEmail);
+copyPhoneBtn.addEventListener("click", copyPhone);
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -69,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 const buttonCertificates = document.querySelector('#button-certificates');
 const certificatesBlock2 = document.querySelectorAll('.certificates-block-2');
 
-
 buttonCertificates.addEventListener('click', (e) => {
     certificatesBlock2.forEach(item => {
         item.classList.toggle('certicificate-hidden');
@@ -77,12 +71,9 @@ buttonCertificates.addEventListener('click', (e) => {
 
     const isVisible = !certificatesBlock2[0].classList.contains('certicificate-hidden');
 
-    // Зміна тексту кнопки
     buttonCertificates.textContent = isVisible ? 'Show less' : 'View all';
 
-    // Скрол до останнього блоку, якщо він став видимим
     if (isVisible) {
-        // Отримуємо останній блок
         const lastBlock = certificatesBlock2[certificatesBlock2.length - 1];
         lastBlock.scrollIntoView({ behavior: 'smooth', block: 'end' });
     }

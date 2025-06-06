@@ -784,15 +784,18 @@ header {
 .social-media {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
+  align-items: center;
 }
 .social-media a {
   text-decoration: none;
   transition-duration: 0.2s;
 }
-.social-media a:hover {
-  background-color: #f9fafb;
-  border-radius: 10px;
+.social-media a svg {
+  width: 25px;
+}
+.social-media a svg:hover {
+  opacity: 0.6;
 }
 
 .photo-block {

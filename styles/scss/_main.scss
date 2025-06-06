@@ -453,15 +453,19 @@ header {
 .social-media {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
+    align-items: center;
 
     a {
         text-decoration: none;
         transition-duration: .2s; 
 
-        &:hover {
-            background-color: $mainlight;
-            border-radius: 10px;
+        svg {
+            width: 25px;
+
+            &:hover {
+                opacity: .6;
+            }
         }
     }
 }
