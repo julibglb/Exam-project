@@ -854,15 +854,13 @@ header {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
   margin-bottom: 48px;
 }
 
@@ -943,22 +941,19 @@ header {
 }
 
 .skills-content {
-  margin-top: 64px;
-  margin-bottom: 64px;
+  padding: 64px 16px;
 }
 .skills-content h3 {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
 }
 .skills-content p {
   font-size: 18px;
@@ -1025,15 +1020,13 @@ header {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
 }
 .certificates-licenses-section p {
   font-size: 18px;
@@ -1091,24 +1084,29 @@ header {
 }
 
 #button-certificates {
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.43;
-  letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
-  padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
-  margin-bottom: 14px;
-  margin-top: 14px;
-  background-color: #4b5563;
+  --bg: #374151;
+  --hover-bg: #e6e6fa;
+  --hover-text: #374151;
   color: #fff;
   cursor: pointer;
-  border: none;
+  border: 1px solid var(--bg);
+  border-radius: 10px;
+  padding: 8px 16px;
+  background: var(--bg);
+  transition: 0.2s;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 14px auto;
+}
+#button-certificates:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+#button-certificates:active {
+  transform: translate(0);
+  box-shadow: none;
 }
 
 .work-content {
@@ -1123,15 +1121,13 @@ header {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
 }
 .work-content p {
   font-size: 18px;
@@ -1245,7 +1241,7 @@ header {
 .work-tools span {
   width: -moz-max-content;
   width: max-content;
-  margin: 0 auto;
+  margin: 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.43;
@@ -1255,7 +1251,6 @@ header {
   padding: 4px 20px;
   border-radius: 12px;
   background-color: #e5e7eb;
-  margin: 0;
 }
 
 .project-button {
@@ -1270,22 +1265,26 @@ header {
   font-weight: 600;
 }
 .project-button a button {
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.43;
-  letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
-  padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
-  background-color: #4b5563;
+  --bg: #374151;
+  --hover-bg: #e6e6fa;
+  --hover-text: #374151;
   color: #fff;
   cursor: pointer;
-  border: none;
+  border: 1px solid var(--bg);
+  border-radius: 10px;
+  padding: 8px 16px;
+  background: var(--bg);
+  transition: 0.2s;
+}
+.project-button a button:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem, -0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+.project-button a button:active {
+  transform: translate(0);
+  box-shadow: none;
 }
 
 .testimonials {
@@ -1304,15 +1303,13 @@ header {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
 }
 .testimonials-content > p {
   font-size: 18px;
@@ -1407,15 +1404,13 @@ header {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 1.43;
   letter-spacing: normal;
-  text-align: left;
-  color: #4b5563;
+  text-align: center;
+  color: #000;
   padding: 4px 20px;
-  border-radius: 12px;
-  background-color: #e5e7eb;
 }
 .title-contact p {
   font-size: 18px;
@@ -1650,10 +1645,6 @@ body.dark .photo-block img {
 body.dark .about-me {
   background-color: #111827;
 }
-body.dark #about {
-  color: #d1d5db;
-  background-color: #374151;
-}
 body.dark .about-me-photo {
   box-shadow: -11px 11px #374151, 11px 11px #374151;
 }
@@ -1675,13 +1666,17 @@ body.dark .my-biography p,
 body.dark .my-biography span {
   color: #d1d5db;
 }
+body.dark #about {
+  color: #fff;
+  background-color: #6495ed;
+}
 body.dark .skills-content h3,
 body.dark .certificates-licenses-section h3,
 body.dark .work-content h3,
 body.dark .testimonials-content h3,
 body.dark .title-contact h3 {
-  color: #d1d5db;
-  background-color: #374151;
+  color: #fff;
+  background-color: #6495ed;
 }
 body.dark .skills-content p,
 body.dark .certificates-licenses-section p,
@@ -1711,8 +1706,20 @@ body.dark .project-info {
 body.dark .project-info h4 {
   color: #f9fafb;
 }
+body.dark #button-certificates {
+  background-color: #87cefa;
+}
+body.dark #button-certificates:hover {
+  background-color: #79d1ff;
+}
 body.dark .project-button span {
   color: #d1d5db;
+}
+body.dark .project-button button {
+  background-color: #87cefa;
+}
+body.dark .project-button button:hover {
+  background-color: #79d1ff;
 }
 body.dark .work-tools span {
   color: #d1d5db;

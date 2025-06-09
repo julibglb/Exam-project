@@ -25,9 +25,22 @@
     }
 }
 
-@mixin buttonPrimary {
+@mixin h3Primary {
     width: max-content;
     margin: 0 auto;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: $black;
+    padding: 4px 20px;
+    
+}
+
+@mixin skillsButton {
+    width: max-content;
+    margin: 0;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.43;
@@ -47,6 +60,32 @@
     text-align: center;
     color: $grey;
     margin-top: 16px;
+}
+
+@mixin btnProjects {
+    --bg: #374151;
+    --hover-bg: #e6e6fa;
+    --hover-text: #374151;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 10px;
+    padding: 8px 16px;
+    background: var(--bg);
+    transition: 0.2s;
+    
+
+    &:hover {
+        color: var(--hover-text);
+        transform: translate(-0.25rem, -0.25rem);
+        background: var(--hover-bg);
+        box-shadow: 0.25rem 0.25rem var(--bg);
+    }
+
+    &:active {
+        transform: translate(0);
+        box-shadow: none;
+    }
 }
 
 @mixin imgCertf {

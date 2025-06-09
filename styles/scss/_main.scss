@@ -526,7 +526,7 @@ header {
 }
 
 #about {
-    @include buttonPrimary;
+    @include h3Primary;
     margin-bottom: 48px;
 }
 
@@ -609,11 +609,10 @@ header {
 //---------------------------SKILLS----------------------//
 
 .skills-content {
-    margin-top: 64px;
-    margin-bottom: 64px;
+    padding: 64px 16px;
 
     h3 {
-        @include buttonPrimary;
+        @include h3Primary;
     }
 
     p {
@@ -677,7 +676,7 @@ header {
 
 .certificates-licenses-section {
     h3 {
-        @include buttonPrimary;
+        @include h3Primary;
     }
     
     p {
@@ -702,13 +701,13 @@ header {
 }
 
 #button-certificates {
-    @include buttonPrimary;
-    margin-bottom: 14px;
-    margin-top: 14px;
-    background-color: $grey;
-    color: $white;
-    cursor: pointer;
-    border: none;
+    @include btnProjects;
+    width: max-content;
+    margin: 14px auto;
+    // background-color: $grey;
+    // color: $white;
+    // cursor: pointer;
+    // border: none;
 }
 //------------------------------WORK----------------------------//
 
@@ -720,7 +719,7 @@ header {
     }
 
     h3 {
-        @include buttonPrimary;
+        @include h3Primary;
     }
 
     p {
@@ -828,8 +827,7 @@ header {
     gap: 8px;
 
     span{
-        @include buttonPrimary;
-        margin: 0;
+        @include skillsButton;
     }
 }
 
@@ -847,11 +845,7 @@ header {
 
     a {
         button{
-            @include buttonPrimary;
-            background-color: $grey;
-            color: $white;
-            cursor: pointer;
-            border: none;
+            @include btnProjects;
         }
     }
 }
@@ -870,7 +864,7 @@ header {
     }
 
     h3 {
-        @include buttonPrimary;
+        @include h3Primary;
     }
 
     & > p {
@@ -966,7 +960,7 @@ header {
 
 .title-contact {
     h3 {
-        @include buttonPrimary;
+        @include h3Primary;
     }
     
     p {

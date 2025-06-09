@@ -113,11 +113,6 @@ body.dark {
         background-color: $darkgrey;
     }
 
-    #about {
-        color: $greywhite;
-        background-color: $lightblue;
-    }
-
     .about-me-photo {
         box-shadow: -11px 11px $lightblue, 11px 11px $lightblue;
 
@@ -145,6 +140,11 @@ body.dark {
         }
     }
 
+    #about {    
+        color: #fff;
+        background-color: #6495ed;
+    }
+
     .skills-content,
     .certificates-licenses-section,
     .work-content,
@@ -152,8 +152,8 @@ body.dark {
     .title-contact {
     
         h3 {
-            color: $greywhite;
-            background-color: $lightblue;
+            color: $white;
+            background-color: #6495ed;
         }
     
         p {
@@ -196,9 +196,26 @@ body.dark {
         }
     }
 
+    #button-certificates {
+        background-color: #87cefa;
+
+        &:hover {
+            background-color: #79d1ff ;
+        
+        } 
+    }
+
    .project-button {
         span {
             color: $greywhite;
+        }
+
+        button {
+            background-color: #87cefa;
+
+            &:hover {
+                background-color: #79d1ff ;
+            }
         }
     }
 
